@@ -53,7 +53,7 @@ sudo mv cleanup_backup.sh /usr/local/bin/
 
 ### Passo 4: Configurar o Arquivo do Serviço *systemd*
 
-1. Copie o arquivo `cleanup.backup.service` para o diretório de unidades do *systemd*:
+Copie o arquivo `cleanup.backup.service` para o diretório de unidades do *systemd*:
 
    ```bash
    sudo mv cleanup.backup.service /etc/systemd/system/
