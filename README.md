@@ -34,8 +34,6 @@ Este serviço verifica se o backup diário `/data/backup/aplicacao/localhost/dai
    chmod +x cleanup_backup.sh
    ```
 
-3. (Opcional) Edite o script `cleanup_backup.sh` se necessário para alterar os caminhos dos diretórios de backup.
-
 ### Passo 2: Criar o Arquivo de Log
 
 Certifique-se de criar o diretório e o arquivo de log que o script usará para registrar as operações:
