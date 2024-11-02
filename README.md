@@ -56,12 +56,8 @@ sudo mv cleanup_backup.sh /usr/local/bin/
 1. Copie o arquivo `cleanup.backup.service` para o diretório de unidades do *systemd*:
 
    ```bash
-   sudo mv backup_cleaner.service /etc/systemd/system/
+   sudo mv cleanup.backup.service /etc/systemd/system/
    ```
-
-2. Atualize o arquivo de unidade, se necessário:
-
-   - **ExecStart**: Verifique se o caminho para o script `cleanup_backup.sh` está correto.
 
 ### Passo 5: Atualizar as Configurações do *systemd*
 
