@@ -61,62 +61,50 @@ Copie o arquivo `cleanup.backup.service` para o diretório de unidades do *syste
 
 ### Passo 5: Atualizar as Configurações do *systemd*
 
-Após configurar o arquivo de unidade, atualize o *systemd* para reconhecer a nova unidade:
+1. Após configurar o arquivo de unidade, atualize o *systemd* para reconhecer a nova unidade:
 
 ```bash
 sudo systemctl daemon-reload
+```
+
+2. Inicie o serviço:
+
+```bash
+sudo systemctl start cleanup.backup.service
+```
+
+3. Para garantir que o serviço seja iniciado automaticamente na inicialização do sistema:
+
+```bash
+sudo systemctl enable backup_cleaner.service
 ```
 
 ## Como Usar o Serviço
 
 Agora que o serviço está configurado, você pode usar os seguintes comandos para controlá-lo.
 
-### Iniciar o Serviço
-
-Para iniciar o serviço manualmente:
+1. Para ver o status atual do serviço:
 
 ```bash
-sudo systemctl start backup_cleaner.service
+sudo systemctl status clanup.backup.service
 ```
 
-### Ativar o Serviço na Inicialização
-
-Para garantir que o serviço seja iniciado automaticamente na inicialização do sistema:
+2. Para parar o serviço manualmente:
 
 ```bash
-sudo systemctl enable backup_cleaner.service
+sudo systemctl stop cleanup.backup.service
 ```
 
-### Verificar o Status do Serviço
-
-Para ver o status atual do serviço:
+3. Para desativar o serviço, impedindo que ele inicie automaticamente na inicialização:
 
 ```bash
-sudo systemctl status backup_cleaner.service
+sudo systemctl disable cleanup.backup.service
 ```
 
-### Parar o Serviço
-
-Para parar o serviço manualmente:
+3. Visualizar o arquivo de logs:
 
 ```bash
-sudo systemctl stop backup_cleaner.service
-```
-
-### Desativar o Serviço
-
-Para desativar o serviço, impedindo que ele inicie automaticamente na inicialização:
-
-```bash
-sudo systemctl disable backup_cleaner.service
-```
-
-### Ver Logs do Serviço
-
-Os logs do serviço podem ser visualizados diretamente no arquivo de log:
-
-```bash
-tail -f /var/log/verifica_diretorios.log
+tail -f /var/log/cleanup_backup.log
 ```
 
 Ou, para ver logs do *systemd*:
@@ -125,12 +113,10 @@ Ou, para ver logs do *systemd*:
 journalctl -u cleanup.backup.service
 ```
 
-### Reiniciar o Serviço
-
-Se você fez alguma alteração no script ou nas configurações, reinicie o serviço:
+4. Se você fez alguma alteração no script ou nas configurações, reinicie o serviço:
 
 ```bash
-sudo systemctl restart cleanup_backup.service
+sudo systemctl restart cleanup.backup.service
 ```
 
 ## Observações Finais
