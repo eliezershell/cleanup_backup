@@ -1,0 +1,10 @@
+[Unit]
+Description=Verifica e Remove Backups antigos em "/data/backup/aplicacao/localhost/*"
+
+[Service]
+ExecStart=/usr/local/bin/cleanup_backup.sh
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
