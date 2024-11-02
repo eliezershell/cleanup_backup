@@ -4,7 +4,7 @@ Este repositório contém um script de limpeza automatizada de backups antigos, 
 
 ## Propósito
 
-Este serviço verifica se o diretório `daily.5` existe e, se for encontrado, remove os diretórios `daily.5` e `daily.4` especificados no script. É uma ferramenta útil para administrar backups rotativos em sistemas onde o espaço de armazenamento é limitado ou onde backups antigos precisam ser limpos regularmente.
+Este serviço verifica se o backup diário `/data/backup/aplicacao/localhost/daily.5` existe e, se for encontrado, remove os backups `/data/backup/aplicacao/localhost/daily.5` e `/data/backup/aplicacao/localhost/daily.4`. É uma ferramenta útil para administrar backups rotativos em sistemas onde o espaço de armazenamento é limitado ou onde backups antigos precisam ser limpos regularmente.
 
 ## Pré-requisitos
 
