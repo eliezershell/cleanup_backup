@@ -86,7 +86,7 @@ Agora que o serviço está configurado, você pode usar os seguintes comandos pa
 1. Para ver o status atual do serviço:
 
 ```bash
-sudo systemctl status clanup.backup.service
+sudo systemctl status cleanup.backup.service
 ```
 
 2. Para parar o serviço manualmente:
