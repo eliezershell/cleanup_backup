@@ -11,7 +11,7 @@ cleanup_backup() {
     for bkp in "${backups[@]}"; do
         if [ -d "$bkp" ]; then
             rm -rf "$bkp"
-            echo "$(date '+%Y-%m-%d %H:%M:%S') - Diretório removido: $bkp" >> "$log_file"
+            echo "$(TZ='Etc/GMT+3' date '+%d-%m-%Y %H:%M:%S GMT-3') - Diretório removido: $bkp" >> "$log_file"
             sleep 900
         fi
     done
@@ -20,7 +20,7 @@ cleanup_backup() {
 # Loop infinito para monitorar continuamente
 while true; do
     if [ -d "/data/backup/aplicacao/localhost/daily.5" ]; then
-        echo "$(date '+%Y-%m-%d %H:%M:%S') - Backup 'daily.5' encontrado. Removendo diretórios especificados." >> "$log_file"
+        echo "$(TZ='Etc/GMT+3' date '+%d-%m-%Y %H:%M:%S GMT-3') - Backup 'daily.5' encontrado. Removendo diretórios especificados." >> "$log_file"
         cleanup_backup
     fi
     sleep 120
