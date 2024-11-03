@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Backups a serem removidos
+### Variáveis ###
+# Backups a serem removidos:
 backups=("/data/backup/aplicacao/localhost/daily.4" "/data/backup/aplicacao/localhost/daily.5")
-
-# Arquivo de log
+# Arquivo de log:
 log_file="/var/log/cleanup_backup.log"
 
 # Função para remover backups
