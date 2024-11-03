@@ -76,7 +76,7 @@ sudo systemctl start cleanup.backup.service
 3. Para garantir que o serviço seja iniciado automaticamente na inicialização do sistema:
 
 ```bash
-sudo systemctl enable backup_cleaner.service
+sudo systemctl enable cleanup_backup.service
 ```
 
 ## Como Usar o Serviço
